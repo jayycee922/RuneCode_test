@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RuneCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Pixelify+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <section id="viewport" class="frame" aria-label="Game world">
+    <canvas id="game"></canvas>
+    <div id="hover-text"></div>
+    <div id="xp-drops"></div>
+    <div id="levelup" hidden></div>
+  </section>
+
+  <section id="chat" class="frame" aria-label="Chat">
+    <div id="chat-tabs"><span class="on">Game</span><span>Quests</span><span>Hints</span></div>
+    <div id="chat-log" role="log" aria-live="polite"></div>
+  </section>
+
+  <aside id="sidebar" class="frame" aria-label="Player panel">
+    <div id="mini-wrap">
+      <canvas id="minimap" width="192" height="144" aria-label="Minimap. Click to walk."></canvas>
+      <div id="orbs">
+        <div class="orb lvl"><i>Lv</i><div><span id="orb-level">1</span><small>Level</small></div></div>
+        <div class="orb hp"><i>HP</i><div><span id="orb-hp">10</span><small>Hitpoints</small></div></div>
+        <div class="orb tier"><i>T</i><div><span id="orb-tier">1</span><small id="orb-tier-name">Novice</small></div></div>
+      </div>
+    </div>
+    <div id="tabs" role="tablist">
+      <button id="tab-stats" role="tab" aria-selected="true" data-tab="stats">Stats</button>
+      <button id="tab-quests" role="tab" aria-selected="false" data-tab="quests">Quests</button>
+      <button id="tab-pack" role="tab" aria-selected="false" data-tab="pack">Pack</button>
+      <button id="tab-opts" role="tab" aria-selected="false" data-tab="opts">Options</button>
+    </div>
+    <div id="panel" role="tabpanel"></div>
+  </aside>
+</div>
+
+<div id="overlay" hidden></div>
+
+<script src="js/questions-python.js"></script>
+<script src="js/questions-js.js"></script>
+<script src="js/world.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
